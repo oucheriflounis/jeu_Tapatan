@@ -13,7 +13,7 @@ import tkinter as tk
 
 #constante
 L= 620
-
+#####COUCOU
 
 
 plateau= tk.Tk()
