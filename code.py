@@ -31,10 +31,19 @@ lower_left = 0
 lower_mid = 0
 lower_right = 0
 
+sj1=0
+sj2=0
+
+
 # Functions
 
+def restart(event):
+    pass
+
+
 def white_move(event):
-    global turn, nb_tour, moving_piece, top_left, top_mid, top_right, mid_left, mid, mid_right, lower_left, lower_mid, lower_right
+    global turn, nb_tour, moving_piece, top_left, top_mid, top_right,\
+         mid_left, mid, mid_right, lower_left, lower_mid, lower_right
     x = event.x
     y = event.y
 
@@ -291,6 +300,34 @@ canvas.bind('<Button-1>', white_move)
 
 # Position
 
-canvas.grid(row=0, column=0)
+canvas.grid(rowspan=2, columnspan=3)
+
+
+score = tk.Label(root, text="  J1  " + str(sj1) + "  -  " + str(sj2)+ "  J2  ", font=("calibri", 30), fg="white", bg="black", padx=185)
+score.grid(row=2, columnspan = 3)
+
+
+redemarer = tk.Button(root, text= "redemarer", padx=10, pady= 10, fg="white", bg="black", command=restart)
+redemarer.grid(column=0, row=3)
+
+reprendre = tk.Button(root, text= "reprendre", padx=10, pady= 10, fg="white", bg="black", command=restart)
+reprendre.grid(column=1, row=3)
+
+sauvgarder = tk.Button(root, text= "sauvgarder", padx=10, pady= 10, bg="green", command=restart)
+sauvgarder.grid(column=2, row=3)
+
+h_vs_h = tk.Button(root, text= " J1 vs J2 ", padx=10, pady= 10, fg="white", bg="black", command=restart)
+h_vs_h.grid(column=3, row=0)
+
+h_vs_IA = tk.Button(root, text= " J1 vs IA ", padx=10, pady= 10, fg="white", bg="black", command=restart)
+h_vs_IA.grid(column=3, row=1)
+
+IA_vs_IA = tk.Button(root, text= " IA vs IA ", padx=10, pady= 10, fg="white", bg="black", command=restart)
+IA_vs_IA.grid(column=3, row=2)
+
+
+
+
+
 
 root.mainloop()
