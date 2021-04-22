@@ -12,14 +12,27 @@
 import tkinter as tk
 
 #constante
-L= 620
+L= 600
 
+
+def restart(event):
+    pass
+
+
+
+sj1=0
+sj2=0
 
 
 plateau= tk.Tk()
 
 canvas = tk.Canvas(plateau,height=L, width=L ,bg='black')
-canvas.grid(column=0 ,row=0)
+canvas.grid(columnspan =3 ,rowspan = 2 )
+
+
+
+
+
 
 #contourage 
 canvas.create_rectangle(10, 10, L-10, L-10, width=5, outline="red")
@@ -38,5 +51,29 @@ line_5 = canvas.create_line(L-30, 30, L-30, L-30,fill='red')
 line_6 = canvas.create_line(L//2, 30, L//2, L-30,fill='red')
 line_7 = canvas.create_line(30, 30, L-30, L-30,fill='red')
 line_8 = canvas.create_line(30, L-30, L-30, 30,fill='red')
+
+score = tk.Label(plateau, text="  J1  " + str(sj1) + "  -  " + str(sj2)+ "  J2  ", font=("calibri", 30), bg="red", padx=185)
+score.grid(row=2, columnspan = 3)
+
+
+redemarer = tk.Button(plateau, text= "redemarer", padx=10, pady= 10, bg="white", command=restart)
+redemarer.grid(column=0, row=3)
+
+reprendre = tk.Button(plateau, text= "reprendre", padx=10, pady= 10, bg="white", command=restart)
+reprendre.grid(column=1, row=3)
+
+sauvgarder = tk.Button(plateau, text= "sauvgarder", padx=10, pady= 10, bg="green", command=restart)
+sauvgarder.grid(column=2, row=3)
+
+h_vs_h = tk.Button(plateau, text= " J1 vs J2 ", padx=10, pady= 10, bg="red", command=restart)
+h_vs_h.grid(column=3, row=0)
+
+h_vs_IA = tk.Button(plateau, text= " J1 vs IA ", padx=10, pady= 10, bg="red", command=restart)
+h_vs_IA.grid(column=3, row=1)
+
+IA_vs_IA = tk.Button(plateau, text= " IA vs IA ", padx=10, pady= 10, bg="red", command=restart)
+IA_vs_IA.grid(column=3, row=2)
+
+
 
 plateau.mainloop()
