@@ -1,27 +1,27 @@
-from tkinter import*
+import tkinter as tk
 import subprocess
 
 
-fenetre=Tk()
+fenetre=tk.Tk()
 fenetre.title("jeu")
-fond=Canvas(fenetre,width=800,height=600,bg="white")
+fond=tk.Canvas(fenetre,width=800,height=600,bg="white")
 
 def run_Tapatan():
     subprocess.run("py ./HvH_Jeu.py")
 
 #Menu déroulant
-menuBar = Menu(fenetre)
+menuBar = tk.Menu(fenetre)
 fenetre['menu'] = menuBar
-sousMenu = Menu(menuBar,tearoff = 0)
+sousMenu = tk.Menu(menuBar,tearoff = 0)
 menuBar.add_cascade(label='Menu', menu=sousMenu)
 sousMenu.add_command(label='Quitter', command=fenetre.destroy)
 sousMenu.add_command(label="Tapatan", command = run_Tapatan)
 
-Img_IAvsH = PhotoImage(file = "IA_VS_Humain.PNG")
+Img_IAvsH = tk.PhotoImage(file = "IA_VS_Humain.PNG")
 background = fond.create_image(200,150, image = Img_IAvsH)
-Img_HvsH = PhotoImage(file = "Humain_VS_Humain.PNG")
+Img_HvsH = tk.PhotoImage(file = "Humain_VS_Humain.PNG")
 background = fond.create_image(600,150, image = Img_HvsH)
-Img_IAvsIA = PhotoImage(file = "IA_VS_IA.PNG")
+Img_IAvsIA = tk.PhotoImage(file = "IA_VS_IA.PNG")
 background = fond.create_image(400,320, image = Img_IAvsIA)
 
 #replacer le nom dans subprocess en fonction des différents programmes
