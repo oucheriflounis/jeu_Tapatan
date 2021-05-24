@@ -1,11 +1,14 @@
 # jeu de tapatan
 #########################################
 # groupe MPCI 6
-# OUCHERIF Lounis
-# ZAGBAHI Godi
-# LIGER Arthur
-# MORCOS DOUEIHY Jean-Paul
-# ROBINSON Andry
+# 
+# 1 #OUCHERIF Lounis
+# 2 #ZAGBAHI Godi
+# 3 #LIGER Arthur
+# 4 #MORCOS DOUEIHY Jean-Paul
+# 5 #ROBINSON Andry
+# 
+# ####################################### 
 #
 # https://github.com/uvsq22011110/jeu_Tapatan
 ###################################
